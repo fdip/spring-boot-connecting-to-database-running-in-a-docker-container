@@ -17,7 +17,7 @@ Sample application to illustrate the usage of a JEE micro service running on a d
        
         mvn docker:start
 
-This starts up a new instance of MySql Server. Confirm this by checking the processing running on docker.
+This starts up a new instance of MySql Server. Confirm this by checking the processes running on docker.
         
         docker ps -a
  
