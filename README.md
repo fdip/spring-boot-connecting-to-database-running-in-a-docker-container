@@ -1,6 +1,6 @@
 ## Overview
 
-Sample application to illustrate the usage of a JEE micro service running on a docker container connecting to other docker container hosting a database server.
+Sample application to illustrate the usage of a JEE micro service running on a docker container connecting to another docker container hosting a database server.
 
 
 
