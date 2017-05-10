@@ -3,9 +3,9 @@ database:
   container_name: database.dev
   command: mysqld --user=root --verbose
   volumes:
-    - ./activiti-sql/mysql.create.engine.sql:/docker-entrypoint-initdb.d/mysql.create.engine.sql
-    - ./activiti-sql/mysql.create.history.sql:/docker-entrypoint-initdb.d/mysql.create.history.sql
-    - ./activiti-sql/mysql.create.identity.sql:/docker-entrypoint-initdb.d/mysql.create.identity.sql
+    - ./activiti-sql/activiti.mysql.create.engine.sql:/docker-entrypoint-initdb.d/mysql.create.engine.sql
+    - ./activiti-sql/activiti.mysql.create.history.sql:/docker-entrypoint-initdb.d/mysql.create.history.sql
+    - ./activiti-sql/activiti.mysql.create.identity.sql:/docker-entrypoint-initdb.d/mysql.create.identity.sql
 
   ports:
     - "3306:3306"
