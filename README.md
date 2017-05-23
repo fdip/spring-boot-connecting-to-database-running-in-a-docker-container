@@ -35,3 +35,30 @@ Once the docker compose is successfully executed, your docker mysql container sh
     CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
     81ed22e7be66        mysql               "docker-entrypoint..."   3 days ago          Up 32 minutes       0.0.0.0:3306->3306/tcp   database.dev
     
+### Building and publishing custom MySql image with Activiti database
+docker build -t mysql-with-activiti .
+
+Check if the images is created succesfully  and tag the image
+
+        docker images
+
+        docker tag mysql-with-activiti pioneerlabsio/mysql-with-activiti
+
+Test the tagged image locally before publishing to docker hub
+        
+        docker run --name=activitidb -e MYSQL_DATABASE='activiti' -e MYSQL_USER='test' -e MYSQL_PASSWORD='test' -e MYSQL_ROOT_PASSWORD='root' -p 3306:3306 -t pioneerlabsio/mysql-with-activiti
+
+Use your favourite mysql client and connect to the docker mysql process using the following details:
+
+        host: 0.0.0.0
+        port: 3306
+        user: test
+        password: test
+
+You should see a new database with all the Activiti tables.
+
+Now push the image to the docker hub
+    
+        docker push pioneerlabsio/mysql-with-activiti
+        
+      
